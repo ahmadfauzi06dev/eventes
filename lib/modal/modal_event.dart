@@ -20,6 +20,8 @@ class Event {
   String? image;
   int? ticket;
   int? count;
+  int? joined;
+  int? join;
   LatLng? latLng;
   Map<String, dynamic>? joinEvent;
   String? typePayment;
@@ -37,11 +39,12 @@ class Event {
       this.mapsLatLink,
       this.typePayment,
       this.price,
+      this.joined,
       this.title,
       this.type,
       this.userDesc,
       this.ticket,
-      this.userName,
+      this.userName,this.join,
       this.image,
       this.count,
       this.latLng,
@@ -69,6 +72,8 @@ class Event {
     title  : data['title'],
     type  : data['type'],
     ticket: data['ticket'],
+    joined: data['joined'],
+    join: data['join'],
     userDesc  : data['userDesc'],
     userName  : data['userName'],
     userProfile  : data['userProfile'],
