@@ -11,16 +11,10 @@ class HelperNotifications {
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitialize =
         const AndroidInitializationSettings('@mipmap/ic_launcher');
-    var iOSInitialize = const IOSInitializationSettings();
+
     var initializationSettings =
-        InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings,
-        onSelectNotification: (String? payload) {
-      try {
-        if (payload != null && payload.isNotEmpty) {}
-      } catch (e) {}
-      return;
-    });
+        InitializationSettings(android: androidInitialize);
+   
 
     await FirebaseMessaging.instance
         .setForegroundNotificationPresentationOptions(
@@ -55,20 +49,19 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void setupFcm() {
   var initializationSettingsAndroid = const AndroidInitializationSettings('@mipmap/ic_launcher');
-  var initializationSettingsIOs = const IOSInitializationSettings();
   var initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
-    iOS: initializationSettingsIOs,
+   
   );
 
   //when the app is in foreground state and you click on notification.
-  flutterLocalNotificationsPlugin.initialize(initializationSettings,
-      onSelectNotification: (payload) {
-        if (payload != null) {
-          Map<String, dynamic> data = json.decode(payload);
-          goToNextScreen(data);
-        }
-  });
+  // flutterLocalNotificationsPlugin.initialize(initializationSettings,
+  //     onSelectNotification: (payload) {
+  //       if (payload != null) {
+  //         Map<String, dynamic> data = json.decode(payload);
+  //         goToNextScreen(data);
+  //       }
+  // });
 
   //When the app is terminated, i.e., app is neither in foreground or background.
   FirebaseMessaging.instance.getInitialMessage().then((message) {
