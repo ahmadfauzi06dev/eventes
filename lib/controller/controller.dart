@@ -392,7 +392,7 @@ class CreateEventController extends GetxController {
   }
 
   Future<void> getImage1() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       image1 = File(pickedFile.path);
@@ -403,7 +403,7 @@ class CreateEventController extends GetxController {
   }
 
   Future<void> getImage2() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       image2 = File(pickedFile.path);
@@ -414,7 +414,7 @@ class CreateEventController extends GetxController {
   }
 
   Future<void> getImage3() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       image3 = File(pickedFile.path);
@@ -425,7 +425,7 @@ class CreateEventController extends GetxController {
   }
 
   Future<void> getImage4() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       image4 = File(pickedFile.path);
@@ -436,7 +436,7 @@ class CreateEventController extends GetxController {
   }
 
   Future<void> getImage5() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       image5 = File(pickedFile.path);
