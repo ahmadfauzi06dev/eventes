@@ -53,7 +53,7 @@ dev_dependencies:
   firebase_analytics:
   charts_flutter:
   syncfusion_flutter_charts:
-  firebase_auth: ^4.6.2
+  firebase_auth:
   cached_network_image: ^3.2.0
 
 
