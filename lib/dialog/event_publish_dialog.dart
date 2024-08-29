@@ -3,8 +3,8 @@ import 'package:evente_mobile_admin_app/base/color_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:evente/controller/controller.dart';
-
-import '../base/widget_utils.dart';
+import 'package:evente/base/color_data.dart';
+import 'package:evente/base/widget_utils.dart';
 
 class ErrorDialog extends StatefulWidget {
   const ErrorDialog({Key? key}) : super(key: key);
