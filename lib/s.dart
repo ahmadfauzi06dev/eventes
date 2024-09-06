@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 
-import 'Login_Screen.dart';
 
 class SplashScreen extends StatefulWidget {
   final WidgetBuilder a;
