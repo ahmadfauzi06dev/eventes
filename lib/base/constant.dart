@@ -9,6 +9,15 @@ class Constant {
   static const String fontsFamily = "Sofia";
   static const String fromLogin = "getFromLoginClick";
   static const String homePos = "getTabPos";
+
+
+  
+  static const String a = "administrator";
+  static const String b = "editor";
+  static const String c = "ticket";
+  static const String d = "user";
+
+
   static const int stepStatusNone = 0;
   static const int stepStatusActive = 1;
   static const int stepStatusDone = 2;
