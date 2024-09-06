@@ -8,13 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 
+import 'Login_Screen.dart';
 
 class SplashScreen extends StatefulWidget {
-    final VoidCallback a;
-    final VoidCallback b;
-    final VoidCallback c;
-    final VoidCallback d;
-   SplashScreen({required this.a, required this.b, required this.c, required this.d});
+  final WidgetBuilder a;
+  final WidgetBuilder b;
+  final WidgetBuilder c;
+  final WidgetBuilder d;
+  SplashScreen({required this.a, required this.b, required this.c, required this.d});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -40,21 +41,31 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   gotoSignInPage() {
-  widget.d();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: widget.d), // Menggunakan parameter dinamis
+    );
   }
 
   gotoHomePage(String? role) {
     final SignInBloc sb = context.read<SignInBloc>();
     if (role == 'administrator') {
-       widget.a();
-      // Navigator.of(context).pushReplacement(PageRouteBuilder(pageBuilder: (_, __, ___) => HomeScreen()));
+      //  widget.a();
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: widget.a), // Menggunakan parameter dinamis
+      );
     } else if (role == 'editor') {
-     widget.b();
-        } else if (role == 'ticket') {
-     widget.c();
-        } else {
-    widget.d();
-     }
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: widget.b), // Menggunakan parameter dinamis
+      );
+    } else if (role == 'ticket') {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: widget.c), // Menggunakan parameter dinamis
+      );
+    } else {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: widget.d), // Menggunakan parameter dinamis
+      );
+    }
   }
 
   Future<PackageInfo> _getPackageInfo() {
