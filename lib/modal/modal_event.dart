@@ -18,6 +18,8 @@ class Event {
   double? mapsLangLink;
   double? mapsLatLink;
   int? price;
+  int? joined;
+  int? join;
   String? title;
   String? type;
   String? userDesc;
@@ -36,6 +38,8 @@ class Event {
     this.location,
     this.time,
     this.mapsLangLink,
+    this.joined,
+    this.join,
     this.mapsLatLink,
     this.price,
     this.title,
@@ -82,6 +86,8 @@ class Event {
       image: data['image'],
       description: data['description'],
       id: data['id'],
+      joined: data['joined'],
+      join: data['join'],
       latLng: latLng,
       count: data['count'],
       location: data['location'],
